@@ -5,9 +5,9 @@
   <subtitle>技术分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https:127.0.0.1/"/>
+  <link href="https://lvdingfen.github.io/myblog.github.io/"/>
   <updated>2019-07-16T00:48:02.011Z</updated>
-  <id>https:127.0.0.1/</id>
+  <id>https://lvdingfen.github.io/myblog.github.io/</id>
   
   <author>
     <name>jack</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>My first</title>
-    <link href="https:127.0.0.1/2019/07/16/my-first/"/>
-    <id>https:127.0.0.1/2019/07/16/my-first/</id>
+    <link href="https://lvdingfen.github.io/myblog.github.io/2019/07/16/my-first/"/>
+    <id>https://lvdingfen.github.io/myblog.github.io/2019/07/16/my-first/</id>
     <published>2019-07-16T12:46:08.000Z</published>
     <updated>2019-07-16T00:48:02.011Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>你好</title>
-    <link href="https:127.0.0.1/2019/07/15/hello-world/"/>
-    <id>https:127.0.0.1/2019/07/15/hello-world/</id>
+    <link href="https://lvdingfen.github.io/myblog.github.io/2019/07/15/hello-world/"/>
+    <id>https://lvdingfen.github.io/myblog.github.io/2019/07/15/hello-world/</id>
     <published>2019-07-15T14:14:32.215Z</published>
     <updated>2019-07-16T00:41:04.400Z</updated>
     
