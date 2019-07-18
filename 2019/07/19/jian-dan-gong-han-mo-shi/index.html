@@ -518,7 +518,7 @@ var PopFactory <span class="token operator">=</span> function<span class="token 
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<p>一个对象也可以代替许多类<br>比如下面的：</p>
+<p>一个对象也可以代替许多类<br>例子：比如想要创建一些书，那么这些书就都有一些相似的地方，比如目录、页码等。也有一些不相似的地方，如书名、出版时间、书的类型等，对于创建的对象相似的属性就像上面一样处理，对于不同的属性就要针对性地处理，比如我们将不同属性作为参数传递来处理~<br>比如下面的：</p>
 <pre class=" language-bash"><code class="language-bash">
 //工厂模式
 <span class="token keyword">function</span> createBook<span class="token punctuation">(</span>name,time,type<span class="token punctuation">)</span><span class="token punctuation">{</span>
