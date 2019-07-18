@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-16T14:41:33.551Z</updated>
+  <updated>2019-07-18T10:13:39.108Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简单工厂模式</title>
+    <link href="https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/"/>
+    <id>https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/</id>
+    <published>2019-07-18T20:33:08.000Z</published>
+    <updated>2019-07-18T10:13:39.108Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>git</title>

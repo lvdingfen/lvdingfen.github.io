@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="git, 技术分享">
-    <meta name="description" content="just test">
+    <meta name="keywords" content="简单工厂模式, 技术分享">
+    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>git | 孤单背影</title>
+    <title>简单工厂模式 | 孤单背影</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        git
+                        简单工厂模式
                     </div>
                 </div>
             </div>
@@ -388,7 +388,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-16
+                    2019-07-18
                 </div>
 
                 
@@ -404,7 +404,102 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="just-test"><a href="#just-test" class="headerlink" title="just test"></a>just test</h1>
+                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>简单工厂模式：又叫静态工厂方法，由一个工厂对象决定创建某一种产品对象类的实例。主要是用来创建同一类对象。</p>
+<h2 id="登陆模块需求：用户名输入框这里如果用户输入的内容不符合规范就定义一个警示框警示一句‘用户名不能多于16个字母或数字’"><a href="#登陆模块需求：用户名输入框这里如果用户输入的内容不符合规范就定义一个警示框警示一句‘用户名不能多于16个字母或数字’" class="headerlink" title="登陆模块需求：用户名输入框这里如果用户输入的内容不符合规范就定义一个警示框警示一句‘用户名不能多于16个字母或数字’"></a>登陆模块需求：用户名输入框这里如果用户输入的内容不符合规范就定义一个警示框警示一句‘用户名不能多于16个字母或数字’</h2><h3 id="于是便有了下面的代码"><a href="#于是便有了下面的代码" class="headerlink" title="于是便有了下面的代码"></a>于是便有了下面的代码</h3><pre class=" language-bash"><code class="language-bash">var LoginAlert <span class="token operator">=</span> function<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.content <span class="token operator">=</span> text<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>
+LoginAlert.prototype.show <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  //显示警示框
+<span class="token punctuation">}</span>
+var userNameAlert <span class="token operator">=</span> new LoginAlert<span class="token punctuation">(</span><span class="token string">"用户名不能多于16个字母或数字"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+userNameAlert.show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="然后又来了一个需求，对于用户输入的密码，用户输入的密码错误时也提示一句“输入的密码不正确”，于是就用到了类的知识"><a href="#然后又来了一个需求，对于用户输入的密码，用户输入的密码错误时也提示一句“输入的密码不正确”，于是就用到了类的知识" class="headerlink" title="然后又来了一个需求，对于用户输入的密码，用户输入的密码错误时也提示一句“输入的密码不正确”，于是就用到了类的知识"></a>然后又来了一个需求，对于用户输入的密码，用户输入的密码错误时也提示一句“输入的密码不正确”，于是就用到了类的知识</h3><pre class=" language-bash"><code class="language-bash">var passwordAlert <span class="token operator">=</span> new LoginAlert<span class="token punctuation">(</span><span class="token string">'输入的密码不正确'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+passwordAlert.show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="继续增加一个需求，用户登陆时如果用户名不存在就提示一句“您的用户名不存在，请重新输入，但是需要在警示框中添加一个注册按钮”，创建一个类这样的话以前的功能就复用不了"><a href="#继续增加一个需求，用户登陆时如果用户名不存在就提示一句“您的用户名不存在，请重新输入，但是需要在警示框中添加一个注册按钮”，创建一个类这样的话以前的功能就复用不了" class="headerlink" title="继续增加一个需求，用户登陆时如果用户名不存在就提示一句“您的用户名不存在，请重新输入，但是需要在警示框中添加一个注册按钮”，创建一个类这样的话以前的功能就复用不了"></a>继续增加一个需求，用户登陆时如果用户名不存在就提示一句“您的用户名不存在，请重新输入，但是需要在警示框中添加一个注册按钮”，创建一个类这样的话以前的功能就复用不了</h3><pre class=" language-bash"><code class="language-bash">var LoginConfirm <span class="token operator">=</span> function<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.content <span class="token operator">=</span> text<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+LoginConfirm.prototype.show <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //显示确认框
+<span class="token punctuation">}</span>
+var LoginFailConfirm <span class="token operator">=</span> new LoginConfirm<span class="token punctuation">(</span><span class="token string">'您的用户名不存在，请重新输入'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+LoginFailConfirm.show<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="然后还有一个，登陆成功后给出一个自定义提示框，除了有确定取消按钮，也提示一句‘欢迎回来’，又是一个新类"><a href="#然后还有一个，登陆成功后给出一个自定义提示框，除了有确定取消按钮，也提示一句‘欢迎回来’，又是一个新类" class="headerlink" title="然后还有一个，登陆成功后给出一个自定义提示框，除了有确定取消按钮，也提示一句‘欢迎回来’，又是一个新类"></a>然后还有一个，登陆成功后给出一个自定义提示框，除了有确定取消按钮，也提示一句‘欢迎回来’，又是一个新类</h3><pre class=" language-bash"><code class="language-bash">var LoginPrompt <span class="token operator">=</span> function<span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.content <span class="token operator">=</span>text<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+LoginPrompt.prototype.show <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //显示提示框
+<span class="token punctuation">}</span></code></pre>
+<h3 id="上述存在着LoginAlert、LoginConfirm、LoginPrompt三个类，则这个问题可以通过简单工厂来解决，也就是一种模式，因为在每次创建时"><a href="#上述存在着LoginAlert、LoginConfirm、LoginPrompt三个类，则这个问题可以通过简单工厂来解决，也就是一种模式，因为在每次创建时" class="headerlink" title="上述存在着LoginAlert、LoginConfirm、LoginPrompt三个类，则这个问题可以通过简单工厂来解决，也就是一种模式，因为在每次创建时"></a>上述存在着LoginAlert、LoginConfirm、LoginPrompt三个类，则这个问题可以通过简单工厂来解决，也就是一种模式，因为在每次创建时</h3><p>###都要找对应的类,太麻烦了，而且在注册（regist）模块用login前缀不太好，所以最好封装在一个函数中，这样只需要记住这个函数，然后通过这个</p>
+<p>###函数就可以创建需要的对象来直接使用，不止是一个人，其他人使用的时候不需要关注这个对象到底依赖于哪一个基类，只是需要记住这个函数就</p>
+<p>###可以了，这个函数通常也叫工厂函数，这种模式叫简单工厂模式。</p>
+<p>###通俗讲法：药店里面有许多药，有许多药的介绍，你需要哪一钟药，看哪些药的介绍，你只是需要问售货员就好了，不需要一个一个去找。</p>
+<p>###于是有了下面的代码：</p>
+<pre class=" language-bash"><code class="language-bash">//篮球基类
+var Basketball <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.intro <span class="token operator">=</span> <span class="token string">'篮球在美国非常流行'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+Basketball.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    getMember <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       console.log<span class="token punctuation">(</span><span class="token string">'每一个队伍需要5名队员'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    getBallSize <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       console.log<span class="token punctuation">(</span><span class="token string">'篮球很大'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+//足球基类
+var Football <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.intro <span class="token operator">=</span> <span class="token string">'足球在世界范围内都非常流行'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+Football.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    getMember <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span><span class="token string">'每一个队伍需要11名队员'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>,
+    getBallSize <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span><span class="token string">'足球很大'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+//网球基类
+var Tennis <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.intro <span class="token operator">=</span> <span class="token string">'每年都有需要的网球比赛'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+Tennis.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    getMember <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       console.log<span class="token punctuation">(</span><span class="token string">'每个队伍需要一名队员'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>,
+    getBallSize <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       console.log<span class="token punctuation">(</span><span class="token string">'网球很小'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+//运动工厂
+var SportsFactory <span class="token operator">=</span> function<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    switch<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">case</span> <span class="token string">'NBA'</span><span class="token keyword">:</span>
+          <span class="token keyword">return</span> new Basketball<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">case</span> <span class="token string">'wordCup'</span><span class="token keyword">:</span>
+          <span class="token keyword">return</span> new Football<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">case</span> <span class="token string">'FrenchOpen'</span><span class="token keyword">:</span>
+          <span class="token keyword">return</span> new Tennis<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="要是想要踢足球的话，只需要告诉店员要买一个足球即可。使用这个商店工厂时仅仅需要记住SportsFactory这个工厂对象即可"><a href="#要是想要踢足球的话，只需要告诉店员要买一个足球即可。使用这个商店工厂时仅仅需要记住SportsFactory这个工厂对象即可" class="headerlink" title="要是想要踢足球的话，只需要告诉店员要买一个足球即可。使用这个商店工厂时仅仅需要记住SportsFactory这个工厂对象即可"></a>要是想要踢足球的话，只需要告诉店员要买一个足球即可。使用这个商店工厂时仅仅需要记住SportsFactory这个工厂对象即可</h3><pre class=" language-bash"><code class="language-bash">//为世界杯创建一个足球，只需要记住运动工厂SportsFactory，调用并创建
+var footnall  <span class="token operator">=</span> SportsFactory<span class="token punctuation">(</span><span class="token string">'wordCup'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console.log<span class="token punctuation">(</span>footnall<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console.log<span class="token punctuation">(</span>footnall.intro<span class="token punctuation">)</span><span class="token punctuation">;</span>
+footnall.getMember<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="非常简单，类似地创建自定义弹框"><a href="#非常简单，类似地创建自定义弹框" class="headerlink" title="非常简单，类似地创建自定义弹框"></a>非常简单，类似地创建自定义弹框</h3><pre class=" language-bash"><code class="language-bash">
+var PopFactory <span class="token operator">=</span> function<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   switch<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token keyword">case</span> <span class="token string">'alert'</span><span class="token keyword">:</span>
+         <span class="token keyword">return</span> new LoginAlert<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">case</span> <span class="token string">'confirm'</span><span class="token keyword">:</span>
+         <span class="token keyword">return</span> new LoginConfirm<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">case</span> <span class="token string">'prompt'</span><span class="token keyword">:</span>
+         <span class="token keyword">return</span> new LoginPrompt<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
             </div>
             <hr/>
 
@@ -562,9 +657,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《git》
+                    《简单工厂模式》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/17/git/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/19/jian-dan-gong-han-mo-shi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 jack
             </a> 采用
@@ -604,9 +699,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/07/19/jian-dan-gong-han-mo-shi/">
                     <div class="card-image">
@@ -624,9 +720,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -635,6 +731,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -645,20 +742,19 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/16/my-first/">
+                <a href="/2019/07/17/git/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="My first">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
                         
-                        <span class="card-title">My first</span>
+                        <span class="card-title">git</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using He
+                            just test
                         
                     </div>
                     <div class="publish-info">
