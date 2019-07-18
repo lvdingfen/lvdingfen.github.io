@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-18T10:31:34.823Z</updated>
+  <updated>2019-07-18T10:37:35.047Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/</id>
     <published>2019-07-18T20:33:08.000Z</published>
-    <updated>2019-07-18T10:31:34.823Z</updated>
+    <updated>2019-07-18T10:37:35.047Z</updated>
     
     <summary type="html">
     
@@ -29,9 +29,8 @@
       
         
         
-          &lt;p&gt;简单工厂模式：又叫静态工厂方法，由一个工厂对象决定创建某一种产品对象类的实例。主要是用来创建同一类对象。&lt;br&gt;登陆模块需求：用户名输入框这里如果用户输入的内容不符合规范就定义一个警示框警示一句‘用户名不能多于16个字母或数字’&lt;/p&gt;
-&lt;p&gt;于是便有了下面的代码&lt;/p&gt;
-
+          &lt;p&gt;简单工厂模式：又叫静态工厂方法，由一个工厂对象决定创建某一种产品对象类的实例。主要是用来创建同一类对象。&lt;br&gt;登陆模块需求：&lt;del&gt;用户名输入框这里如果用户输入的内容不符合规范就定义一个警示框警示一句‘用户名不能多于16个字母或数字’&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;1、于是
         
       
     
