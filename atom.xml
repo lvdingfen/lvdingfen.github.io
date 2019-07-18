@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-18T13:28:25.786Z</updated>
+  <updated>2019-07-18T14:12:12.961Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/</id>
     <published>2019-07-18T20:33:08.000Z</published>
-    <updated>2019-07-18T13:28:25.786Z</updated>
+    <updated>2019-07-18T14:12:12.961Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;简单工厂模式:又叫静态工厂方法,由一个工厂对象决定创建某一种产品对象类的实例&lt;del&gt;主要是用来创建同一类对象&lt;/del&gt;&lt;br&gt;使用场合：限制在创建单一对象&lt;br&gt;团队项目开发不同于个人开发，其对全局变量地限制很大，所以我们应该尽可能少地创建去全局变量。对于同一类对象在不
+          &lt;p&gt;简单工厂模式:又叫静态工厂方法,由一个工厂对象决定创建某一种产品对象类的实例主要是用来创建同一类对象~&lt;br&gt;使用场合：限制在创建单一对象&lt;br&gt;团队项目开发不同于个人开发，其对全局变量地限制很大，所以我们应该尽可能少地创建去全局变量。对于同一类对象在不同需求中地重复使用，
         
       
     
