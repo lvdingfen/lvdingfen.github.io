@@ -518,6 +518,46 @@ var PopFactory <span class="token operator">=</span> function<span class="token 
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<p>一个对象也可以代替许多类<br>比如下面的：</p>
+<pre class=" language-bash"><code class="language-bash">
+//工厂模式
+<span class="token keyword">function</span> createBook<span class="token punctuation">(</span>name,time,type<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   var o <span class="token operator">=</span> new Object<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   o.name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+   o.time <span class="token operator">=</span> <span class="token function">type</span><span class="token punctuation">;</span>
+   o.getName <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console.log<span class="token punctuation">(</span>this.name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+var book1 <span class="token operator">=</span> createBook<span class="token punctuation">(</span><span class="token string">"js book"</span>,2018,<span class="token string">"js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+var book2 <span class="token operator">=</span> createBook<span class="token punctuation">(</span><span class="token string">"css book"</span>,<span class="token string">"2019"</span>,<span class="token string">"css"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+book1.getName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+book2.getName<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>上述是没有继承任何类或对象,要是想要寄生式继承的话如下</p>
+<pre class=" language-bash"><code class="language-bash">
+<span class="token keyword">function</span> createPop<span class="token punctuation">(</span>type,text<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  var 0 <span class="token operator">=</span> new Object<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  o.content <span class="token operator">=</span> text<span class="token punctuation">;</span>
+  o.show <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //显示方法
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  if<span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'alert'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //警示框差异部分
+  <span class="token punctuation">}</span>
+  if<span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'prompt'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //提示框差异部分
+  <span class="token punctuation">}</span>
+  if<span class="token punctuation">(</span>type <span class="token operator">==</span> <span class="token string">'confirm'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    //确认框差异部分
+  <span class="token punctuation">}</span>
+  //将对象返回
+  <span class="token keyword">return</span> o<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+//创建警示框
+var userNameAlert <span class="token operator">=</span> createPop<span class="token punctuation">(</span><span class="token string">'alert'</span>,<span class="token string">'用户名只能是26个字母'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
             </div>
             <hr/>
