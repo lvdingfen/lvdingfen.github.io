@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>工厂方法模式</title>
+      <link href="/2019/07/19/gong-han-fang-fa-mo-shi/"/>
+      <url>/2019/07/19/gong-han-fang-fa-mo-shi/</url>
+      
+        <content type="html"><![CDATA[<p>工厂方法模式:通过对产品类的抽象使其创建业务主要负责用于创建多类产品的实例。</p><p>需求：新来的一批广告资源需要投放，关于计算机培训的。一批是Java的，用于绿色字体。还有一批是PHP的，要用黄色字体，红色背景。</p><p>于是创建两个类，通过实例对象方式来完成这个需求</p><pre><code>//创建Java学科类var Java = function(content){    //将内容保存在content里面以备日后使用    this.content = content;    //创建对象时，通过闭包，直接执行，将内容按需求的样式插到页面当中    (function(content){        var div = document.createElement(&#39;div&#39;);    })}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript设计模式 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>简单工厂模式</title>
       <link href="/2019/07/19/jian-dan-gong-han-mo-shi/"/>
       <url>/2019/07/19/jian-dan-gong-han-mo-shi/</url>
