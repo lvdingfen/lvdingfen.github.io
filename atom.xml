@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-18T14:45:48.213Z</updated>
+  <updated>2019-07-19T01:52:40.235Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lvdingfen.github.io/2019/07/19/gong-han-fang-fa-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/19/gong-han-fang-fa-mo-shi/</id>
     <published>2019-07-19T02:21:49.000Z</published>
-    <updated>2019-07-18T14:45:48.213Z</updated>
+    <updated>2019-07-19T01:52:40.235Z</updated>
     
     <summary type="html">
     
@@ -31,7 +31,7 @@
         
           &lt;p&gt;工厂方法模式:通过对产品类的抽象使其创建业务主要负责用于创建多类产品的实例。&lt;/p&gt;
 &lt;p&gt;需求：新来的一批广告资源需要投放，关于计算机培训的。一批是Java的，用于绿色字体。还有一批是PHP的，要用黄色字体，红色背景。&lt;/p&gt;
-&lt;p&gt;于是创建两个类，通过实例对象方式来完成
+&lt;p&gt;1、于是创建两个类，通过实例对象方式来
         
       
     
