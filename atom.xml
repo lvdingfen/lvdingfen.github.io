@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-19T01:52:40.235Z</updated>
+  <updated>2019-07-21T08:37:24.335Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>抽象工厂模式</title>
+    <link href="https://lvdingfen.github.io/2019/07/20/chou-xiang-gong-han-mo-shi/"/>
+    <id>https://lvdingfen.github.io/2019/07/20/chou-xiang-gong-han-mo-shi/</id>
+    <published>2019-07-19T19:37:17.000Z</published>
+    <updated>2019-07-21T08:37:24.335Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;抽象工厂模式:通过对类的工厂抽象使其业务用于对产品类簇的创建，而不负责创建某一类产品的实例&lt;/p&gt;
+&lt;p&gt;下面代码的作用：创建这个car类其实什么都不能做，创建时没有任何属性，然而原型上的prototype上的方法也不能使用，否则会报错。但是在继承上却很有用的，因为定义了一
+        
+      
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="https://lvdingfen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="JavaScript设计模式" scheme="https://lvdingfen.github.io/tags/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="JavaScript" scheme="https://lvdingfen.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>工厂方法模式</title>
