@@ -483,8 +483,61 @@ VehicleFactory.Truck.prototype <span class="token operator">=</span> <span class
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<pre class=" language-bash"><code class="language-bash"></code></pre>
-<pre class=" language-bash"><code class="language-bash"></code></pre>
+<p>通过抽象工厂创建子类（本例中是让子类继承父类，是对子类的扩展），所以我们需要一些产品子类，然后让子类继承相应的产品簇抽象类</p>
+<pre class=" language-bash"><code class="language-bash">
+//宝马子类
+var BMW <span class="token operator">=</span> function<span class="token punctuation">(</span>price,speed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+   this.speed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+// 抽象工厂实现对Car抽象类的继承
+VehicleFactory<span class="token punctuation">(</span>BMW,<span class="token string">'Car'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+BMW.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+   <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+BMW.prototype.getSpeed <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">return</span> this.speed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+//兰博基尼汽车子类
+var Lamborghini <span class="token operator">=</span> function<span class="token punctuation">(</span>price, speed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+   this.speed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+//抽象工厂实现对Car抽象类的继承
+VehicleFactory<span class="token punctuation">(</span>Lamborghini, <span class="token string">'Car'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Lamborghini.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+Lamborghini.prototype.getSpeed <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> this.speed<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+//宇通汽车子类
+var YUTONG <span class="token operator">=</span> function<span class="token punctuation">(</span>price, passenger<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+  this.passenger <span class="token operator">=</span> passenger<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+//抽象工厂实现对Bus抽象类的继承
+VehicleFactory<span class="token punctuation">(</span>YUTONG, <span class="token string">'Bus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+YUTONG.prototype.getPassengerNum <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> this.passenger<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+//奔驰汽车子类
+var BenzTruck <span class="token operator">=</span> function<span class="token punctuation">(</span>price, trainLoad<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
+    this.trainLoad <span class="token operator">=</span> trainLoad<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+// 抽象工厂实现对Truck抽象类的继承
+VehicleFactory<span class="token punctuation">(</span>BenzTruck, <span class="token string">'Truck'</span><span class="token punctuation">)</span>
+BenzTruck.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+BenzTruck.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>单例测试</p>
+<pre class=" language-bash"><code class="language-bash">var truck <span class="token operator">=</span> new BenzTruck<span class="token punctuation">(</span>1000000, 1000<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console.log<span class="token punctuation">(</span>truck.getPrice<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>   //1000000
+console.log<span class="token punctuation">(</span>truck.type<span class="token punctuation">)</span><span class="token punctuation">;</span>   //truck</code></pre>
 
             </div>
             <hr/>
