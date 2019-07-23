@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-23T08:32:23.646Z</updated>
+  <updated>2019-07-23T09:08:37.692Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lvdingfen.github.io/2019/07/24/man-hua-li-jie-kubernetes/"/>
     <id>https://lvdingfen.github.io/2019/07/24/man-hua-li-jie-kubernetes/</id>
     <published>2019-07-23T19:37:13.000Z</published>
-    <updated>2019-07-23T08:32:23.646Z</updated>
+    <updated>2019-07-23T09:08:37.692Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,10 @@
     
     </summary>
     
+      <category term="云计算" scheme="https://lvdingfen.github.io/categories/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+    
+      <category term="kubernetes" scheme="https://lvdingfen.github.io/tags/kubernetes/"/>
     
   </entry>
   
@@ -79,7 +83,7 @@
     <link href="https://lvdingfen.github.io/2019/07/22/jian-zao-zhe-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/22/jian-zao-zhe-mo-shi/</id>
     <published>2019-07-21T21:41:59.000Z</published>
-    <updated>2019-07-23T07:21:32.731Z</updated>
+    <updated>2019-07-23T09:08:20.104Z</updated>
     
     <summary type="html">
     
@@ -94,8 +98,8 @@
     
     </summary>
     
+      <category term="前端" scheme="https://lvdingfen.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="https://lvdingfen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="JavaScript设计模式" scheme="https://lvdingfen.github.io/tags/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -110,7 +114,7 @@
     <link href="https://lvdingfen.github.io/2019/07/20/chou-xiang-gong-han-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/20/chou-xiang-gong-han-mo-shi/</id>
     <published>2019-07-19T19:37:17.000Z</published>
-    <updated>2019-07-23T07:22:29.900Z</updated>
+    <updated>2019-07-23T09:09:08.151Z</updated>
     
     <summary type="html">
     
@@ -125,8 +129,8 @@
     
     </summary>
     
+      <category term="前端" scheme="https://lvdingfen.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="https://lvdingfen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="JavaScript设计模式" scheme="https://lvdingfen.github.io/tags/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -141,7 +145,7 @@
     <link href="https://lvdingfen.github.io/2019/07/19/gong-han-fang-fa-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/19/gong-han-fang-fa-mo-shi/</id>
     <published>2019-07-19T02:21:49.000Z</published>
-    <updated>2019-07-23T07:22:21.381Z</updated>
+    <updated>2019-07-23T09:09:18.355Z</updated>
     
     <summary type="html">
     
@@ -157,8 +161,8 @@
     
     </summary>
     
+      <category term="前端" scheme="https://lvdingfen.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="https://lvdingfen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="JavaScript设计模式" scheme="https://lvdingfen.github.io/tags/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
@@ -173,7 +177,7 @@
     <link href="https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/"/>
     <id>https://lvdingfen.github.io/2019/07/19/jian-dan-gong-han-mo-shi/</id>
     <published>2019-07-18T20:33:08.000Z</published>
-    <updated>2019-07-23T07:22:16.976Z</updated>
+    <updated>2019-07-23T09:09:27.295Z</updated>
     
     <summary type="html">
     
@@ -187,8 +191,8 @@
     
     </summary>
     
+      <category term="前端" scheme="https://lvdingfen.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="https://lvdingfen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="JavaScript设计模式" scheme="https://lvdingfen.github.io/tags/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
