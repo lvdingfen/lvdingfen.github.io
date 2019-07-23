@@ -42,19 +42,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="/2019/07/23/package/"/>
-      <url>/2019/07/23/package/</url>
-      
-        <content type="html"><![CDATA[{"dependencies":{"hexo-asset-image":"^1.0.0"}}]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>建造者模式</title>
       <link href="/2019/07/22/jian-zao-zhe-mo-shi/"/>
       <url>/2019/07/22/jian-zao-zhe-mo-shi/</url>
