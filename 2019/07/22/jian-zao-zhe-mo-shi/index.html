@@ -4,9 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="抽象工厂模式, 技术分享">
-    <meta name="description" content="抽象工厂模式:通过对类的工厂抽象使其业务用于对产品类簇的创建，而不负责创建某一类产品的实例
-下面代码的作用：创建这个car类其实什么都不能做，创建时没有任何属性，然而原型上的prototype上的方法也不能使用，否则会报错。但是在继承上却很">
+    <meta name="keywords" content="建造者模式, 技术分享">
+    <meta name="description" content="建造者模式:将一个复杂对象的构建层与其表示层相互分离，同样的构建过程可采用不同的表示~
+工厂模式主要是为了创建对象实例或者类簇(抽象工厂)，关心的是最终产出(创建)的是什么。不关心你创建的整一个过程，仅仅需要知道你最终创建的结果。所以抽象工">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>抽象工厂模式 | 孤单背影</title>
+    <title>建造者模式 | 孤单背影</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        抽象工厂模式
+                        建造者模式
                     </div>
                 </div>
             </div>
@@ -401,7 +401,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-19
+                    2019-07-21
                 </div>
 
                 
@@ -417,128 +417,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>抽象工厂模式:通过对类的工厂抽象使其业务用于对产品类簇的创建，而不负责创建某一类产品的实例</p>
-<p>下面代码的作用：创建这个car类其实什么都不能做，创建时没有任何属性，然而原型上的prototype上的方法也不能使用，否则会报错。但是在继承上却很有用的，因为定义了一种类，并定义了该类所必备的方法，如果在子类中没有重写这些方法，那么当调用时能找到这些方法便会报错，因为大型应用中，总会有一些子类去继承另一些父类，这些父类经常会定义一些必要的方法，却没有实现，如car类中的getPrice()和getSpedeed()方法，那么一旦用子类创建了一个对象，改对象总是应该具有一些必要的方法，但是如果这些必要的方法从父类中继承过来没有具体去重写实现，那么实例化对象便会调用父类中的这些方法，要是父类能有一个友好的提示，那么对于忘记重写子类的这些错误遗漏的避免是非常有帮助的~</p>
-<pre class=" language-bash"><code class="language-bash">//汽车抽象类，当使用其实例对象的方法时会抛出错误
-var Car <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Car.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
-    getPrice <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-       <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>,
-    getSpeed <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-       <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>,
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-<pre class=" language-bash"><code class="language-bash">// 抽象工厂模式
-var VehicleFactory  <span class="token operator">=</span> function<span class="token punctuation">(</span>subType, superType<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    // 判断抽线工厂中是否有该抽象类
-    if<span class="token punctuation">(</span>typeof VehicleFactory<span class="token punctuation">[</span>superType<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'function'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      // 缓冲类
-      <span class="token keyword">function</span> F<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-      // 继承父类属性和方法
-      F.prototype <span class="token operator">=</span> new VehicleFactory<span class="token punctuation">[</span>superType<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      // 将子类constructor指向子类
-      subType.constructor <span class="token operator">=</span> subType<span class="token punctuation">;</span>
-      // 子类原型继承“父类”
-      subType.prototype <span class="token operator">=</span> new F<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>else<span class="token punctuation">{</span>
-        // 不存在该抽象类抛出错误
-        throw new Error<span class="token punctuation">(</span><span class="token string">'未创建该抽象类'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-// 小汽车抽象类
-VehicleFactory.Car <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-   this.type <span class="token operator">=</span> <span class="token string">'car'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-VehicleFactory.Car.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
-   getPrice <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>,
-   getSpeed <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-// 公交车抽象类
-VehicleFactory.Bus <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-   this.type <span class="token operator">=</span> <span class="token string">'bus'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-VehicleFactory.BUs.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
-   getPrice <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>,
-   getPassengerNum <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>,
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-// 货车抽象类
-VehicleFactory.Truck <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  this.type <span class="token operator">=</span> <span class="token string">'truck'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-VehicleFactory.Truck.prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
-  getPrice <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-     <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>,
-  getTrainload <span class="token keyword">:</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-     <span class="token keyword">return</span> new Error<span class="token punctuation">(</span><span class="token string">'抽象方法不能调用'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>通过抽象工厂创建子类（本例中是让子类继承父类，是对子类的扩展），所以我们需要一些产品子类，然后让子类继承相应的产品簇抽象类</p>
-<pre class=" language-bash"><code class="language-bash">
-//宝马子类
-var BMW <span class="token operator">=</span> function<span class="token punctuation">(</span>price,speed<span class="token punctuation">)</span><span class="token punctuation">{</span>
-   this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
-   this.speed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-// 抽象工厂实现对Car抽象类的继承
-VehicleFactory<span class="token punctuation">(</span>BMW,<span class="token string">'Car'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-BMW.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-   <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-BMW.prototype.getSpeed <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">return</span> this.speed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-//兰博基尼汽车子类
-var Lamborghini <span class="token operator">=</span> function<span class="token punctuation">(</span>price, speed<span class="token punctuation">)</span><span class="token punctuation">{</span>
-   this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
-   this.speed <span class="token operator">=</span> speed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-//抽象工厂实现对Car抽象类的继承
-VehicleFactory<span class="token punctuation">(</span>Lamborghini, <span class="token string">'Car'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Lamborghini.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-Lamborghini.prototype.getSpeed <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">return</span> this.speed<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-//宇通汽车子类
-var YUTONG <span class="token operator">=</span> function<span class="token punctuation">(</span>price, passenger<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
-  this.passenger <span class="token operator">=</span> passenger<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-//抽象工厂实现对Bus抽象类的继承
-VehicleFactory<span class="token punctuation">(</span>YUTONG, <span class="token string">'Bus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-YUTONG.prototype.getPassengerNum <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">return</span> this.passenger<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-//奔驰汽车子类
-var BenzTruck <span class="token operator">=</span> function<span class="token punctuation">(</span>price, trainLoad<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    this.price <span class="token operator">=</span> price<span class="token punctuation">;</span>
-    this.trainLoad <span class="token operator">=</span> trainLoad<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-// 抽象工厂实现对Truck抽象类的继承
-VehicleFactory<span class="token punctuation">(</span>BenzTruck, <span class="token string">'Truck'</span><span class="token punctuation">)</span>
-BenzTruck.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-BenzTruck.prototype.getPrice <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> this.price<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>单例测试</p>
-<pre class=" language-bash"><code class="language-bash">var truck <span class="token operator">=</span> new BenzTruck<span class="token punctuation">(</span>1000000, 1000<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console.log<span class="token punctuation">(</span>truck.getPrice<span class="token punctuation">(</span><span class="token punctuation">))</span><span class="token punctuation">;</span>   //1000000
-console.log<span class="token punctuation">(</span>truck.type<span class="token punctuation">)</span><span class="token punctuation">;</span>   //truck</code></pre>
-
+                <p>建造者模式:将一个复杂对象的构建层与其表示层相互分离，同样的构建过程可采用不同的表示~</p>
+<p>工厂模式主要是为了创建对象实例或者类簇(抽象工厂)，关心的是最终产出(创建)的是什么。不关心你创建的整一个过程，仅仅需要知道你最终创建的结果。所以抽象工厂模式我们得到的都是对象实例或者类簇。然而建造者模式在创建对象时要更为复杂一些，虽然其目的也是为了创建对象，但是它更多关心的是创建这个对象的整个过程，甚至于创建对象的每一个细节，比如创建一个人，我们创建的不仅仅要得到人的实例，还要关注创建人的时候，这个人应该穿什么衣服，男的还是女的，爱好都是什么。所以说建造者模式给更加注重的是创建的细节~</p>
+<pre><code>// 创建一位人类
+var Human = function(param){
+    this.skill = param &amp;&amp; param.skill || &#39;保密&#39;;
+    this.hobby = param &amp;&amp; param.hobby || &#39;保密&#39;;
+}
+// 类原型方法
+Human.prototype = {
+    getSkill : function(){
+       return this.skill;
+    },
+    getHobby : function(){
+       return this.hobby;
+    }
+}
+// 实例化姓名类
+var Named = function(name){
+   var that = this;
+   // 构造器
+   // 构造函数解析姓名的姓与名
+   (function(name, that){
+     that.wholeName = name;
+     if(name.indexOf(&#39; &#39;) &gt; -1){
+        that.FirstName = name.slice(0, name.indexOf(&#39; &#39;));
+        that.secondName = name.slice(name.indexOf(&#39; &#39;));
+        //如果 end 未被规定，那么 slice() 方法会选取从 start 到数组结尾的所有元素。
+     }
+   })(name, that);
+}
+//实例化职位
+var Work = function(work){
+   var that = this;
+   // 构造器
+   // 构造函数中通过传入的职位特征来设置相应职位以及描述
+   (function(work,that){
+          switch(work){
+             case &#39;code&#39;:
+               that.work = &#39;工程师&#39;;
+             case &#39;UI&#39;:
+             case &#39;UE&#39;:
+             case &#39;teach&#39;:
+                that.work = &#39;教师&#39;;
+                that.workDescript = &#39;分享也是一种快乐&#39;;
+             default:
+                that.work = work;
+                that.workDescript = &#39;对不起，我们还不清楚您所选择职位的相关描述&#39;;
+          }
+   })(work, that);
+}
+// 更换期望的职位
+Work.prototype.changeWork = function(work){
+   this.work = work;
+}
+// 添加对职位的描述
+Work.prototype.changeDescript = function(setence){
+   this.workDescript = setence;
+}</code></pre>
             </div>
             <hr/>
 
@@ -696,9 +632,9 @@ console.log<span class="token punctuation">(</span>truck.type<span class="token 
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《抽象工厂模式》
+                    《建造者模式》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/20/chou-xiang-gong-han-mo-shi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/22/jian-zao-zhe-mo-shi/" property="cc:attributionName"
                rel="cc:attributionURL">
                 jack
             </a> 采用
@@ -742,25 +678,24 @@ console.log<span class="token punctuation">(</span>truck.type<span class="token 
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/07/22/jian-zao-zhe-mo-shi/">
+                <a href="/2019/07/23/yuan-xing-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="建造者模式">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="原型模式">
                         
-                        <span class="card-title">建造者模式</span>
+                        <span class="card-title">原型模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            建造者模式:将一个复杂对象的构建层与其表示层相互分离，同样的构建过程可采用不同的表示~
-工厂模式主要是为了创建对象实例或者类簇(抽象工厂)，关心的是最终产出(创建)的是什么。不关心你创建的整一个过程，仅仅需要知道你最终创建的结果。所以抽象工
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-21
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
                         </span>
                         <span class="publish-author">
                             
@@ -769,22 +704,6 @@ console.log<span class="token punctuation">(</span>truck.type<span class="token 
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/前端/" target="_blank">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/JavaScript设计模式/" target="_blank">
-                        <span class="chip bg-color">JavaScript设计模式</span>
-                    </a>
-                    
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -796,26 +715,25 @@ console.log<span class="token punctuation">(</span>truck.type<span class="token 
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/19/gong-han-fang-fa-mo-shi/">
+                <a href="/2019/07/20/chou-xiang-gong-han-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="工厂方法模式">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="抽象工厂模式">
                         
-                        <span class="card-title">工厂方法模式</span>
+                        <span class="card-title">抽象工厂模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            工厂方法模式:通过对产品类的抽象使其创建业务主要负责用于创建多类产品的实例。
-需求：新来的一批广告资源需要投放，关于计算机培训的。一批是Java的，用于绿色字体。还有一批是PHP的，要用黄色字体，红色背景。
-1、于是创建两个类，通过实例对象
+                            抽象工厂模式:通过对类的工厂抽象使其业务用于对产品类簇的创建，而不负责创建某一类产品的实例
+下面代码的作用：创建这个car类其实什么都不能做，创建时没有任何属性，然而原型上的prototype上的方法也不能使用，否则会报错。但是在继承上却很
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-19
                             </span>
                         <span class="publish-author">
                             
