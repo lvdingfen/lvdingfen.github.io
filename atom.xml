@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-23T07:54:35.015Z</updated>
+  <updated>2019-07-23T08:32:23.646Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Kubernetes</title>
-    <link href="https://lvdingfen.github.io/2019/07/24/kubernetes/"/>
-    <id>https://lvdingfen.github.io/2019/07/24/kubernetes/</id>
+    <title>漫画理解Kubernetes</title>
+    <link href="https://lvdingfen.github.io/2019/07/24/man-hua-li-jie-kubernetes/"/>
+    <id>https://lvdingfen.github.io/2019/07/24/man-hua-li-jie-kubernetes/</id>
     <published>2019-07-23T19:37:13.000Z</published>
-    <updated>2019-07-23T07:54:35.015Z</updated>
+    <updated>2019-07-23T08:32:23.646Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;/2019/07/24/kubernetes/1.jpg&quot;
+          &lt;p&gt;&lt;img src=&quot;/2019/07/24/man-hua-li-jie-kubernetes/1.jpg&quot; alt&gt;&lt;br&gt;&lt;img src=&quot;/2019/07/24/man-hua-li-jie-kubernetes/2.jpg&quot; alt&gt;&lt;br&gt;&lt;img
         
       
     
