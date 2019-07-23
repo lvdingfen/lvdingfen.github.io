@@ -8,7 +8,7 @@
       <link href="/2019/07/24/kubernetes/"/>
       <url>/2019/07/24/kubernetes/</url>
       
-        <content type="html"><![CDATA[<p><img src="/.io//1.jpg" alt="kubernetes"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/2019/07/24/kubernetes/1.jpg" alt="kubernetes"></p>]]></content>
       
       
       
@@ -22,6 +22,19 @@
       <url>/2019/07/23/yuan-xing-mo-shi/</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2019/07/23/package/"/>
+      <url>/2019/07/23/package/</url>
+      
+        <content type="html"><![CDATA[{"dependencies":{"hexo-asset-image":"^1.0.0"}}]]></content>
       
       
       

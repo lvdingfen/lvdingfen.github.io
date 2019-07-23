@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-23T07:47:09.362Z</updated>
+  <updated>2019-07-23T07:54:35.015Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lvdingfen.github.io/2019/07/24/kubernetes/"/>
     <id>https://lvdingfen.github.io/2019/07/24/kubernetes/</id>
     <published>2019-07-23T19:37:13.000Z</published>
-    <updated>2019-07-23T07:47:09.362Z</updated>
+    <updated>2019-07-23T07:54:35.015Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;/.io//1.jpg&quot;
+          &lt;p&gt;&lt;img src=&quot;/2019/07/24/kubernetes/1.jpg&quot;
         
       
     
@@ -46,6 +46,28 @@
     <updated>2019-07-23T02:31:02.455Z</updated>
     
     <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://lvdingfen.github.io/2019/07/23/package/"/>
+    <id>https://lvdingfen.github.io/2019/07/23/package/</id>
+    <published>2019-07-23T07:54:12.340Z</published>
+    <updated>2019-07-23T07:54:12.341Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          {&quot;dependencies&quot;:{&quot;hexo-asset-image&quot;:&quot;^1.0.0&quot;}}
+        
+      
     
     </summary>
     
