@@ -474,7 +474,27 @@ Work.prototype.changeWork = function(work){
 // 添加对职位的描述
 Work.prototype.changeDescript = function(setence){
    this.workDescript = setence;
-}</code></pre>
+}</code></pre><p>创建一位应聘者<br>应聘者建造者<br>参数 name : 姓名(全名)<br>参数 work ：期望职位</p>
+<pre><code>var Person = function(name, work){
+    // 创建应聘者缓存对象
+    var _person = new Human();
+    // 创建应聘者姓名解析对象
+    _person.name = new Named(name);
+    // 创建应聘者期望职位
+    _person.work = new Work(work);
+    // 将创建的应聘者对象返回
+    return _person;
+}
+
+var person = new Person(&#39;xiao ming&#39;, &#39;code&#39;);
+
+//测试
+console.log(person.skill);    //保密
+console.log(person.name.FirstName);  // xiao
+console.log(person.work.work); //工程师
+console.log(person.work.workDescript);   //每一天在编程中度过
+person.work.changeDescript(&#39;更改一下职位描述!&#39;);
+console.log(person.work.workDescript);   //更改一下职位描述！</code></pre>
             </div>
             <hr/>
 
