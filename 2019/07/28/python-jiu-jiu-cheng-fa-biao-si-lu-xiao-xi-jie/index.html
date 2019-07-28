@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="python正则, 技术分享">
-    <meta name="description" content="python正则 | 孤单背影">
+    <meta name="keywords" content="python九九乘法表思路小细节, 技术分享">
+    <meta name="description" content="
+开始构建一个思路
+for i in range(1,10):
+    for j in range(1,i):
+        print(&amp;quot;{0} x {1} = {2}&amp;quot;.format(i,j,i*j))打印如下发">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>python正则 | 孤单背影</title>
+    <title>python九九乘法表思路小细节 | 孤单背影</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -266,7 +270,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        python正则
+                        python九九乘法表思路小细节
                     </div>
                 </div>
             </div>
@@ -375,12 +379,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python小题/" target="_blank">
+                                <span class="chip bg-color">python小题</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python题目/" class="post-category" target="_blank">
+                                python题目
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -388,7 +405,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-23
+                    2019-07-28
                 </div>
 
                 
@@ -404,7 +421,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p><img src="/.io//1.jpg" alt></p>
+<p>开始构建一个思路</p>
+<pre><code>for i in range(1,10):
+    for j in range(1,i):
+        print(&quot;{0} x {1} = {2}&quot;.format(i,j,i*j))</code></pre><p>打印如下<br><img src="/.io//2.jpg" alt><br>发现连续换行，而且左侧不是1开头，也就是大小不合适,没有1x1<br>解决问题：<br>1、解决连续换行问题，使用end = ‘ ‘ 或者是end = “ “都是可以的<br>2、解决左侧不是1开头的问题，将i和j调换<br>3、j的范围改为(1,i+1)<br>于是有了以下代码</p>
+<pre><code>for i in range(1,10):
+    for j in range(1,i+1):
+        print(&quot;{0} x {1}={2}&quot;.format(j,i,i*j),end=&quot;&quot;)</code></pre><p>看到了终于不换行了，但是是全部不换行<br>还有就是两个之之间没有间隔<br>分析原因以及解决办法<br>1、全部不换行是要找到需要换行的地方，也就是每一次循环i之后需要换行，于是在有了以下代码</p>
+<pre><code>for i in range(1,10):
+    for j in range(1,i+1):
+        print(&quot;{0} x {1}={2}&quot;.format(i,j,i*j),end=&quot;&quot;)
+    print()</code></pre><p><img src="/.io//3.jpg" alt><br>2、解决间隔问题<br>原因：format默认打印后没有空格<br><img src="/.io//4.jpg" alt><br>解决办法可以在这里添加空格<br><img src="/.io//5.jpg" alt><br><img src="/.io//6.jpg" alt><br>或者end中空格<br><img src="/.io//6.jpg" alt></p>
+<p>完整代码如下：</p>
+<pre><code>for i in range(1,10):
+    for j in range(1,i+1):
+        print(&quot;{0} x {1}= {2} &quot;.format(j,i,i*j),end=&quot; &quot;)
+    print()</code></pre><p>现在快速写思路代码总结：<br>1、确定i和j的范围还有之间的关系<br>2、注意输出格式，空格、是否换行、换行的位置</p>
+
             </div>
             <hr/>
 
@@ -562,9 +596,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《python正则》
+                    《python九九乘法表思路小细节》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/24/python-zheng-ze/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/" property="cc:attributionName"
                rel="cc:attributionURL">
                 jack
             </a> 采用
@@ -604,9 +638,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/">
                     <div class="card-image">
@@ -628,9 +663,9 @@ for i in range(1,10):
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -643,6 +678,7 @@ for i in range(1,10):
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -661,20 +697,19 @@ for i in range(1,10):
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/24/man-hua-li-jie-kubernetes/">
+                <a href="/2019/07/24/python-zheng-ze/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="漫画理解Kubernetes">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="python正则">
                         
-                        <span class="card-title">漫画理解Kubernetes</span>
+                        <span class="card-title">python正则</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-
                         
                     </div>
                     <div class="publish-info">
@@ -683,23 +718,11 @@ for i in range(1,10):
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/云计算/" class="post-category" target="_blank">
-                                    云计算
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            jack
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/kubernetes/" target="_blank">
-                        <span class="chip bg-color">kubernetes</span>
-                    </a>
-                    
                 </div>
                 
             </div>

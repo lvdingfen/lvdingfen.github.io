@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-23T14:56:15.226Z</updated>
+  <updated>2019-07-28T02:22:47.312Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python九九乘法表思路小细节</title>
+    <link href="https://lvdingfen.github.io/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/"/>
+    <id>https://lvdingfen.github.io/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/</id>
+    <published>2019-07-28T13:36:57.000Z</published>
+    <updated>2019-07-28T02:22:47.312Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/.io//1.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;开始构建一个思路&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;for i in range(1,10):
+    for j in range(1,i):
+        print(&amp;quot;{0} x {1}
+        
+      
+    
+    </summary>
+    
+      <category term="python题目" scheme="https://lvdingfen.github.io/categories/python%E9%A2%98%E7%9B%AE/"/>
+    
+    
+      <category term="python小题" scheme="https://lvdingfen.github.io/tags/python%E5%B0%8F%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>python正则</title>
