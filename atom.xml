@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lvdingfen.github.io/"/>
-  <updated>2019-07-28T02:22:47.312Z</updated>
+  <updated>2019-07-28T03:03:22.088Z</updated>
   <id>https://lvdingfen.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lvdingfen.github.io/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/"/>
     <id>https://lvdingfen.github.io/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/</id>
     <published>2019-07-28T13:36:57.000Z</published>
-    <updated>2019-07-28T02:22:47.312Z</updated>
+    <updated>2019-07-28T03:03:22.088Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,9 @@
       
         
         
-          &lt;p&gt;&lt;img src=&quot;/.io//1.jpg&quot; alt&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;img src=&quot;//lvdingfen.github.io/2019/07/28/python-jiu-jiu-cheng-fa-biao-si-lu-xiao-xi-jie/1.jpg&quot; alt&gt;&lt;/p&gt;
 &lt;p&gt;开始构建一个思路&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;for i in range(1,10):
-    for j in range(1,i):
-        print(&amp;quot;{0} x {1}
+&lt;pre&gt;&lt;code&gt;for
         
       
     
